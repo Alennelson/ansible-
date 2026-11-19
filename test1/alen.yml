@@ -1,0 +1,21 @@
+---
+- name: configure an simple directory with file 
+  hosts: all
+  become: true
+  tasks: 
+      - name: creating a directory  using anisible 
+        file: 
+           path: /home/mark/sudo
+           state: directory
+      - name: creating a file using anisible 
+        file:
+           path: /home/mark/sudo/alen
+           state: touch
+      - name: creating a user using anisible 
+        user:
+          name: samsung
+          uid: 2026
+          shell: /bin/sh
+          create_home: True
+          state: present
+     

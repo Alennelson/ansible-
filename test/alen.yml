@@ -1,0 +1,9 @@
+---
+- name: configure an simple directory
+  hosts: all
+  tasks:
+    - name: create an directory
+      file: 
+        path: /home/mark/karthik
+        state: directory
+

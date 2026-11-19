@@ -1,0 +1,14 @@
+---
+- name: creating installing apache using apache 
+  hosts: all
+  become: true
+  tasks:
+    - name: install apache http server
+      dnf:
+        name: httpd
+        state: present
+    - name: start and enable the server
+      dnf:
+        name: httpd
+        state: started
+        enabled: true

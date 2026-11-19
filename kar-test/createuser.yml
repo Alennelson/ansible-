@@ -1,0 +1,21 @@
+---
+- name: Create an user in ansible
+  hosts: all
+  become: true
+  tasks:
+    - name: create Group
+      group:
+        name: AlenTheG
+        gid: 2003
+    - name: Create User
+      user:
+        name: alenG
+        state: present
+        home: /home/AlenG
+        create_home: yes
+        shell: /usr/bin/bash
+        uid: 2002
+        group: AlenTheG
+        groups: sudo
+        append: yes
+        comment: "Alen The MyG Employee of the Month"

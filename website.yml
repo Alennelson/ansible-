@@ -1,0 +1,17 @@
+---
+- name: start and enable apache2 using handler
+  hosts: all
+  become: true
+  tasks:
+   - name: install apache2
+     package:
+        name: apache2
+        state: present
+     notify: start and enable 
+  handlers: 
+    - name: start and enable
+      service: 
+        name: apache2
+        state: started
+        enabled: true
+
